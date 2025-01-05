@@ -8,7 +8,7 @@ class ConsoleInput:
     """
     Used to get console input from users.
     """
-    country = "US"
+    country = "IN"
 
     @staticmethod
     def get_new_customer() -> Customer:
@@ -21,9 +21,9 @@ class ConsoleInput:
         print("-- PERSONAL INFORMATION --")
         print("To start an order you must provide the following details.\n")
         print("- COUNTRY -")
-        is_canada = input("If you are ordering from Canada please type \"YES\" now: ")
-        if is_canada.strip().upper() in ["YES","Y", "YA"]:
-            ConsoleInput.country = "CA"
+        is_india = input("If you are ordering from India please type \"YES\" now: ")
+        if is_india.strip().upper() in ["YES","Y", "YA"]:
+            ConsoleInput.country = "IN"
 
         print("\n- NAME -")
         first_name = ConsoleInput.get_valid_input("Please type your FIRST NAME: ", ConsoleInput.validate_name)
@@ -36,10 +36,10 @@ class ConsoleInput:
         print("\n- ADDRESS -")
         print("Please type your ADDRESS using the following form.")
         print("HOUSE #, Full Street Name, City, State/Province, ZIP/Postal Code")
-        if ConsoleInput.country == "US":
+        if ConsoleInput.country == "IN":
             print("EXAMPLE: 700 Pennsylvania Avenue NW, Washington, DC, 20408")
         else:
-            print("CANADA ADDRESS EXAMPLE: 100 Wellington St, Ottawa, ON, K1A0A9")
+            print("INDIA ADDRESS EXAMPLE: MIG 64 Shaheed Nagar, Agra, IN, 282001")
 
         address = ConsoleInput.get_valid_input("ADDRESS: ", ConsoleInput.validate_address)
 
